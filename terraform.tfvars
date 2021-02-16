@@ -1,7 +1,7 @@
 # Variable values
 
 az_location = "westeurope"
-rg_name = "CPLabRG"
+rg_name     = "CPLabRG"
 
 # Networking
 
@@ -43,23 +43,23 @@ subnet_internal3_obj = {
 ## End Networking
 cp_mgmt_obj = {
   osversion = "R8040"
-  name = "CPLabSecurityManagement"
+  name      = "CPLabSecurityManagement"
   # Think this needs to be a file - but not until we can dynamicly
   # populate the region :(
   #cloud_config_string = "#!/usr/bin/python3 /etc/cloud_config.py\n\ninstallationType=\"management\"\nallowUploadDownload=\"true\"\nosVersion=\"r8040\"\ntemplateName=\"management\"\nisBlink=\"false\"\ntemplateVersion=\"20201109\"\nbootstrapScript64=\"\"\nlocation=\"${var.az_location}\"\nmanagementGUIClientNetwork=\"0.0.0.0/0\"\n"
 }
 
 cp_gateway_obj = {
-  name = "CPLabGateway"
-  osversion = "R8040"
-  sku = "sg-byol"
-  frontend_IP_addresses = [5,6,7]
-  backend_IP_addresses = [5,6,7]
+  name                          = "CPLabGateway"
+  osversion                     = "R8040"
+  sku                           = "sg-byol"
+  frontend_IP_addresses         = [5, 6, 7]
+  backend_IP_addresses          = [5, 6, 7]
   delete_os_disk_on_termination = true
-  publisher = "checkpoint"
-  offer = "check-point-cg-r8040"
-  version = "latest"
-  sickey = "vpn123vpn123"
-  vm_size = "Standard_D2_v2"
-  }
+  publisher                     = "checkpoint"
+  offer                         = "check-point-cg-r8040"
+  version                       = "latest"
+  sickey                        = "vpn123vpn123"
+  vm_size                       = "Standard_D2_v2"
+}
 

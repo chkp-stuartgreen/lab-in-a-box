@@ -2,7 +2,7 @@
 
 
 resource "azurerm_network_security_rule" "nsg_rule_outbound" {
-  name = "mgmt_nsg_outbound"
+  name                        = "mgmt_nsg_outbound"
   priority                    = 100
   direction                   = "Outbound"
   access                      = "Allow"

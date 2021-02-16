@@ -45,7 +45,7 @@ variable "subnet_mgmt_obj" {
   type = object({
     name = string
     cidr = string
-    })
+  })
 }
 
 variable "subnet_frontend_obj" {
@@ -88,7 +88,7 @@ variable "subnet_internal3_obj" {
 variable "cp_mgmt_obj" {
   type = object({
     osversion = string
-    name = string
+    name      = string
     #cloud_config_string = string
   })
 }
@@ -97,23 +97,23 @@ variable "cp_mgmt_obj" {
 variable "cp_gateway_obj" {
   type = object({
     osversion = string
-    name = string
+    name      = string
     #cloud_config_string = string
     delete_os_disk_on_termination = bool
-    offer: string
-    publisher: string
-    sku: string
-    version: string
-    frontend_IP_addresses: list(number)
-    backend_IP_addresses: list(number)
-    vm_size: string
-    sickey: string
+    offer : string
+    publisher : string
+    sku : string
+    version : string
+    frontend_IP_addresses : list(number)
+    backend_IP_addresses : list(number)
+    vm_size : string
+    sickey : string
   })
 }
 
 # Used for creating the host - but not used by Gaia OS
 variable "admin_username" {
-  type = string
+  type    = string
   default = "notused"
 }
 

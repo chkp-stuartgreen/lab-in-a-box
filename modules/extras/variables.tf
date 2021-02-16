@@ -18,11 +18,7 @@ variable "subnet_internal3_id" {
   type = string
 }
 
-#variable "subnetlist" {
-#  type = list(string)
-#}
-
 variable "admin_password" {
-  type = string
+  type      = string
   sensitive = true
 }

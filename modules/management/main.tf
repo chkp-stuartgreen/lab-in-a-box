@@ -1,17 +1,10 @@
-# Basic resources
-#resource "azurerm_resource_group" "rg_mgmt" {
-#  name = var.rg_name
-#  location = var.az_location
-#}
-
 resource "azurerm_linux_virtual_machine" "cp_mgmt" {
   name                = local.cp_mgmt_name
   resource_group_name = var.rg_name
   location            = var.az_location
-  # Feel free to change the VM size to something more suitable if required
-  size           = "Standard_D3_v2"
-  admin_username = var.admin_username
-  admin_password = var.admin_password
+  size                = "Standard_D3_v2"
+  admin_username      = var.admin_username
+  admin_password      = var.admin_password
 
   # If a public key is provided, we will disabled interactive authentication
   disable_password_authentication = var.admin_public_key_file_path != "" ? true : false
